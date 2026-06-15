@@ -1,11 +1,72 @@
 .auth-layout {
     min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
 
-    padding: 2rem;
+    grid-template-columns: 1fr 1fr;
 
     background: #0f172a;
+}
+
+.auth-left {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 80px;
+
+    background: linear-gradient(
+        135deg,
+        #1e3a8a,
+        #2563eb
+    );
+
+    color: white;
+}
+
+.auth-left h1 {
+    font-size: 3rem;
+
+    margin-bottom: 20px;
+}
+
+.auth-left p {
+    font-size: 1.2rem;
+
+    margin-bottom: 40px;
+
+    max-width: 500px;
+}
+
+.benefits {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    font-size: 1.1rem;
+}
+
+.auth-right {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+}
+
+@media (max-width: 900px) {
+
+    .auth-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-left {
+        display: none;
+    }
 }

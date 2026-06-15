@@ -1,9 +1,10 @@
-import AuthLayout from "../layouts/AuthLayout";
+import AuthLayout from "../layouts/AuthLayout/AuthLayout";
+import LoginForm from "../components/Auth/Loginform";
 
 function LoginPage() {
   return (
     <AuthLayout>
-      <h1>Login Page</h1>
+      <LoginForm />
     </AuthLayout>
   );
 }

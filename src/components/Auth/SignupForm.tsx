@@ -1,13 +1,12 @@
 import "./SignupForm.css";
+import { Link } from "react-router-dom";
 
 import {
   FaGoogle,
-  FaFacebook,
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
 
-import { FaXTwitter } from "react-icons/fa6";
 
 function SignupForm() {
   return (
@@ -26,16 +25,6 @@ function SignupForm() {
         </button>
 
         <button className="social-btn">
-          <FaFacebook />
-          <span>Sign up with Facebook</span>
-        </button>
-
-        <button className="social-btn">
-          <FaXTwitter />
-          <span>Sign up with X</span>
-        </button>
-
-        <button className="social-btn">
           <FaLinkedin />
           <span>Sign up with LinkedIn</span>
         </button>
@@ -48,7 +37,7 @@ function SignupForm() {
       </div>
 
       <div className="divider">
-        OR
+        <span>OR</span>
       </div>
 
       <form className="signup-form">
@@ -76,6 +65,13 @@ function SignupForm() {
           placeholder="Confirm Password"
           required
         />
+        <label className="terms">
+          <input
+            type="checkbox"
+            required
+          />
+          I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        </label>
 
         <button
           type="submit"
@@ -88,7 +84,7 @@ function SignupForm() {
 
       <div className="login-link">
         Already have an account?
-        <a href="/login"> Login</a>
+        <Link to="/login"> Login</Link>
       </div>
     </div>
   );
