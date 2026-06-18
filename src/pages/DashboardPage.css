@@ -1,0 +1,14 @@
+.dashboard-page {
+  display: flex;
+  min-height: 100vh;
+
+  background: #0f172a;
+}
+
+.dashboard-content {
+  flex: 1;
+
+  padding: 2rem;
+
+  color: white;
+}
