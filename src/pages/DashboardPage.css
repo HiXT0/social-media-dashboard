@@ -1,14 +1,25 @@
-.dashboard-page {
+.dashboard-layout {
   display: flex;
   min-height: 100vh;
 
-  background: #0f172a;
+  background: #f8fafc;
 }
 
+/* Main content area */
+.dashboard-main {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  transition: all 0.3s ease;
+}
+
+/* Page content */
 .dashboard-content {
   flex: 1;
 
   padding: 2rem;
-
-  color: white;
 }

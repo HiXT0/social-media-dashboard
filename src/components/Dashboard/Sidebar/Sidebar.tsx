@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Sidebar.css";
 
 import {
@@ -9,17 +8,18 @@ import {
   FaCog,
   FaBars,
   FaTimes,
+  FaRegEdit,
+  FaComments,
 } from "react-icons/fa";
 
-function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
-
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   return (
     <>
-      <button
-        className="sidebar-toggle"
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <button className="sidebar-toggle" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
 
@@ -28,32 +28,44 @@ function Sidebar() {
           <h2>{isOpen ? "SocialDash" : "SD"}</h2>
         </div>
 
-        <nav className="sidebar-nav">
-          <a href="#">
-            <FaHome />
-            {isOpen && <span>Home</span>}
-          </a>
+<nav className="sidebar-nav">
 
-          <a href="#">
-            <FaCalendarAlt />
-            {isOpen && <span>Calendar</span>}
-          </a>
+  <a href="#">
+    <FaHome />
+    {isOpen && <span>Overview</span>}
+  </a>
 
-          <a href="#">
-            <FaChartLine />
-            {isOpen && <span>Analytics</span>}
-          </a>
+  <a href="#">
+    <FaCalendarAlt />
+    {isOpen && <span>Calendar</span>}
+  </a>
 
-          <a href="#">
-            <FaUsers />
-            {isOpen && <span>Users</span>}
-          </a>
+  <a href="#">
+    <FaRegEdit />
+    {isOpen && <span>Posts</span>}
+  </a>
 
-          <a href="#">
-            <FaCog />
-            {isOpen && <span>Settings</span>}
-          </a>
-        </nav>
+  <a href="#">
+    <FaChartLine />
+    {isOpen && <span>Analytics</span>}
+  </a>
+
+  <a href="#">
+    <FaComments />
+    {isOpen && <span>Messages</span>}
+  </a>
+
+  <a href="#">
+    <FaUsers />
+    {isOpen && <span>Team</span>}
+  </a>
+
+  <a href="#">
+    <FaCog />
+    {isOpen && <span>Settings</span>}
+  </a>
+
+</nav>
       </aside>
     </>
   );
